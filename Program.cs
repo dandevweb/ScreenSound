@@ -1,15 +1,26 @@
-﻿Album albumQueen = new Album();
+﻿Banda queen = new Banda("Queen");
 
-albumQueen.Name = "A night at the opera";
+Album albumQueen = new Album("A night at the opera");
 
-Music music1 = new Music();
-music1.Name = "Death on two legs";
-music1.Duration = 213;
+Music music1 = new Music(queen, "Death on two legs")
+{
+    Duration = 213,
+    Available = true
+};
 
-Music music2 = new Music();
-music2.Name = "Lazing on a sunday afternoon";
-music2.Duration = 65;
+Music music2 = new Music(queen, "Lazing on a sunday afternoon")
+{
+    Duration = 65,
+    Available = false
+};
+
 
 albumQueen.AddMusic(music1);
 albumQueen.AddMusic(music2);
-albumQueen.showMusics();
+queen.AddAlbum(albumQueen);
+
+music1.ShowInfo();
+music2.ShowInfo();
+
+
+queen.ShowAlbums();
