@@ -1,26 +1,33 @@
-class Banda 
+﻿class Banda
 {
+    private List<Album> albuns = new List<Album>();
+    private List<int> notas = new List<int>();
 
-    private List<Album> albums = new List<Album>();
-
-    public Banda(string name)
+    public Banda(string nome)
     {
-        Name = name;
+        Nome = nome;
     }
 
-    public string Name { get; }
+    public string Nome { get; }
+    public double Media => notas.Average();
+    public List<Album> Albuns => albuns;
 
-    public void AddAlbum(Album album)
-    {
-        albums.Add(album);
+    public void AdicionarAlbum(Album album) 
+    { 
+        albuns.Add(album);
     }
 
-    public void ShowAlbums()
+    public void AdicionarNota(int nota)
     {
-        Console.WriteLine($"Lista de álbuns da Banda: {Name}\n");
-        foreach (Album album in albums)
+        notas.Add(nota);
+    }
+
+    public void ExibirDiscografia()
+    {
+        Console.WriteLine($"Discografia da banda {Nome}");
+        foreach (Album album in albuns)
         {
-            Console.WriteLine($"Álbum: {album.Name} ({album.Duration})");
+            Console.WriteLine($"Álbum: {album.Nome} ({album.DuracaoTotal})");
         }
     }
 }
