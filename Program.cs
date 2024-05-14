@@ -1,6 +1,7 @@
 ﻿using ScreenSound.Modelos;
 using ScreenSound.Menus;
 
+
 Banda ira = new Banda("Ira");
 ira.AdicionarNota(new Avaliacao(10));
 ira.AdicionarNota(new Avaliacao(8));
@@ -66,3 +67,5 @@ void ExibirOpcoesDoMenu()
 }
 
 ExibirOpcoesDoMenu();
+
+
